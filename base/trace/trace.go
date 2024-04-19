@@ -12,8 +12,11 @@ import (
 )
 
 var wg sync.WaitGroup
+
 var httpClient = &http.Client{Timeout: 30 * time.Second}
 
+// SleepSomeTime :生成一个介于0到9之间的微秒级别的时间段，用于模拟程序中的等待或延迟操作。
+// 返回值: 返回一个 time.Duration 类型的值。
 func SleepSomeTime() time.Duration {
 	return time.Microsecond * time.Duration(rand.Int()%10)
 }
